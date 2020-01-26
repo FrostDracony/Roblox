@@ -82,6 +82,8 @@ PartH.CFrame = CFrame.new(Position.Position + Vector3.new(-Size.X/2 , -Size.Y/2 
 
 Yes, it works, but it still remains a problem:
 
-
+![RotatedWithoutCFramePart](imgs/GetCornersOfPart/RotatedWithoutCFramePart.gif)
 
 As you can see, if our part turns, our corners don't position themselves where they should and this can lead to unwanted results. But you have to use CFrames to transform the corners in the object space, as it says in the [wiki](https://developer.roblox.com/en-us/api-reference/datatype/CFrame) we just have to multiply the two CFrames and the final result:
+
+![RotatedWithCFrame_Trim](imgs/GetCornersOfPart/RotatedWithCFrame_Trim.gif)
