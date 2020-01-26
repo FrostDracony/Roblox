@@ -13,4 +13,4 @@ The result is this:
 
 Yes, it works, but it still remains a problem:
 
-As you can see, if our part turns, our corners don't position themselves where they should and this can lead to unwanted results. But you have to use CFrames to transform the corners in the object space, as it says in the wiki we just have to multiply the two CFrames and the final result:
+As you can see, if our part turns, our corners don't position themselves where they should and this can lead to unwanted results. But you have to use CFrames to transform the corners in the object space, as it says in the [wiki](https://developer.roblox.com/en-us/api-reference/datatype/CFrame) we just have to multiply the two CFrames and the final result:
