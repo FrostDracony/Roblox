@@ -88,6 +88,7 @@ As you can see, if our part turns, our corners don't position themselves where t
 
 ![RotatedWithCFrame_Trim](imgs/GetCornersOfPart/RotatedWithCFrame_Trim.gif)
 ```Lua
+--The two scripts must be in the part from which you want to get the corners.
 --First Script
 local Position = script.Parent.CFrame
 local Size = script.Parent.Size
