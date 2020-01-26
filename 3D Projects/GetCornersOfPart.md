@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-*[Get the Corners of a normal Part](#get-the-corners-of-a-normal-part)
+* [Get the Corners of a normal Part](#get-the-corners-of-a-normal-part)
 
 ## Get the Corners of a normal Part
 In this tutorial I will deal with getting the corners of a part. These can be used for many other things, for example to control a part into a certain region without using the function game.Workspace:FindPartInRegion3(). Let's start now. To get the parts to a non-rotating part you need a formula. For this it is better to paint a skize. Here is what I painted (I'm not an artist so please no criticism):  
