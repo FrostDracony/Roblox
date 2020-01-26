@@ -84,7 +84,7 @@ Yes, it works, but it still remains a problem:
 
 ![RotatedWithoutCFramePart](imgs/GetCornersOfPart/RotatedWithoutCFramePart.gif)
 
-As you can see, if our part turns, our corners don't position themselves where they should and this can lead to unwanted results. But you have to use CFrames to transform the corners in the object space, as it says in the [wiki](https://developer.roblox.com/en-us/api-reference/datatype/CFrame) we just have to multiply the two CFrames and the final result:
+As you can see, if our part turns, our corners don't position themselves where they should and this can lead to unwanted results. Dieses Teil war am schierigsten, konnte aber mit die Hilfe von [Elcore](https://devforum.roblox.com/u/elocore/summary) gelöst werden (ich habe  [hier](https://devforum.roblox.com/t/cframe-toobjectspace-does-not-really-work/443293) um Hilfe gebeten). To solve this problem you need to use CFrames to transform the CFrame of the corners of the part in the object space, as it says in the [wiki](https://developer.roblox.com/en-us/api-reference/datatype/CFrame) we just have to multiply the two CFrames and the final result:
 
 ![RotatedWithCFrame_Trim](imgs/GetCornersOfPart/RotatedWithCFrame_Trim.gif)
 ```Lua
