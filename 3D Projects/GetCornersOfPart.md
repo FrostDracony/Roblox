@@ -87,3 +87,77 @@ Yes, it works, but it still remains a problem:
 As you can see, if our part turns, our corners don't position themselves where they should and this can lead to unwanted results. But you have to use CFrames to transform the corners in the object space, as it says in the [wiki](https://developer.roblox.com/en-us/api-reference/datatype/CFrame) we just have to multiply the two CFrames and the final result:
 
 ![RotatedWithCFrame_Trim](imgs/GetCornersOfPart/RotatedWithCFrame_Trim.gif)
+```Lua
+--First Script
+local Position = script.Parent.CFrame
+local Size = script.Parent.Size
+local RunService = game:GetService("RunService")
+local Event = script.Parent.Event
+
+local PartA = Instance.new("Part", workspace)
+local PartB = Instance.new("Part", workspace)
+local PartC = Instance.new("Part", workspace)
+local PartD = Instance.new("Part", workspace)
+local PartE = Instance.new("Part", workspace)
+local PartF = Instance.new("Part", workspace)
+local PartG = Instance.new("Part", workspace)
+local PartH = Instance.new("Part", workspace)
+
+
+PartA.Name = "A"
+PartB.Name = "B"
+PartC.Name = "C"
+PartD.Name = "D"
+PartE.Name = "E"
+PartF.Name = "F"
+PartG.Name = "G"
+PartH.Name = "H"
+
+
+PartA.CanCollide = false
+PartB.CanCollide = false
+PartC.CanCollide = false
+PartD.CanCollide = false
+PartE.CanCollide = false
+PartF.CanCollide = false
+PartG.CanCollide = false
+PartH.CanCollide = false
+
+
+PartA.Anchored = true
+PartB.Anchored = true
+PartC.Anchored = true
+PartD.Anchored = true
+PartE.Anchored = true
+PartF.Anchored = true
+PartG.Anchored = true
+PartH.Anchored = true
+
+
+PartA.Size = Vector3.new(1,1,1)
+PartB.Size = Vector3.new(1,1,1)
+PartC.Size = Vector3.new(1,1,1)
+PartD.Size = Vector3.new(1,1,1)
+PartE.Size = Vector3.new(1,1,1)
+PartF.Size = Vector3.new(1,1,1)
+PartG.Size = Vector3.new(1,1,1)
+PartH.Size = Vector3.new(1,1,1)
+
+RunService.Heartbeat:Connect(function()
+	Event:Fire(PartA,PartB,PartC,PartD,PartE,PartF,PartG,PartH,script.Parent.CFrame,script.Parent.Size)
+end)
+
+--Second Script
+local Event = script.Parent.Event
+
+Event.Event:Connect(function(PartA,PartB,PartC,PartD,PartE,PartF,PartG,PartH,Position,Size)
+	PartA.CFrame = Position*CFrame.new(-Size.X/2, Size.Y/2, -Size.Z/2)
+	PartB.CFrame = Position*CFrame.new(-Size.X/2, Size.Y/2, Size.Z/2)
+	PartC.CFrame = Position*CFrame.new(-Size/2)
+	PartD.CFrame = Position*CFrame.new(Size.X/2 , -Size.Y/2 , Size.Z/2)
+	PartE.CFrame = Position*CFrame.new(Size.X/2 , -Size.Y/2 , -Size.Z/2)
+	PartF.CFrame = Position*CFrame.new(Size.X/2 , Size.Y/2 , -Size.Z/2)
+	PartG.CFrame = Position*CFrame.new(Size/2)
+	PartH.CFrame = Position*CFrame.new(-Size.X/2 , -Size.Y/2 , Size.Z/2)	
+end)
+```
