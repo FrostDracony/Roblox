@@ -162,3 +162,61 @@ Event.Event:Connect(function(PartA,PartB,PartC,PartD,PartE,PartF,PartG,PartH,Pos
 	PartH.CFrame = Position*CFrame.new(-Size.X/2 , -Size.Y/2 , Size.Z/2)	
 end)
 ```
+This script can of course be written shorter:
+```Lua
+--The two scripts must be in the part from which you want to get the corners.
+--First Script
+local Position = script.Parent.CFrame
+local Size = script.Parent.Size
+local RunService = game:GetService("RunService")
+local Event = script.Parent.Event
+
+local Corners = {
+	local PartA = Instance.new("Part", workspace)
+	local PartB = Instance.new("Part", workspace)
+	local PartC = Instance.new("Part", workspace)
+	local PartD = Instance.new("Part", workspace)
+	local PartE = Instance.new("Part", workspace)
+	local PartF = Instance.new("Part", workspace)
+	local PartG = Instance.new("Part", workspace)
+	local PartH = Instance.new("Part", workspace)
+}
+
+Corners.PartA.Name = "A"
+Corners.PartB.Name = "B"
+Corners.PartC.Name = "C"
+Corners.PartD.Name = "D"
+Corners.PartE.Name = "E"
+Corners.PartF.Name = "F"
+Corners.PartG.Name = "G"
+Corners.PartH.Name = "H"
+
+for i,v in pairs(Corners) do
+	v.CanCollide = false
+
+	v.Anchored = true
+
+	v.Size = Vector3.new(1,1,1)
+end
+
+RunService.Heartbeat:Connect(function()
+	local Parent = script.Parent
+	local Position = Parent.CFrame
+	local Size = Parent.Size
+	Event:Fire(PartA,PartB,PartC,PartD,PartE,PartF,PartG,PartH,Position,Size)
+end)
+
+--Second Script
+local Event = script.Parent.Event
+
+Event.Event:Connect(function(PartA,PartB,PartC,PartD,PartE,PartF,PartG,PartH,Position,Size)
+	PartA.CFrame = Position*CFrame.new(-Size.X/2, Size.Y/2, -Size.Z/2)
+	PartB.CFrame = Position*CFrame.new(-Size.X/2, Size.Y/2, Size.Z/2)
+	PartC.CFrame = Position*CFrame.new(-Size/2)
+	PartD.CFrame = Position*CFrame.new(Size.X/2 , -Size.Y/2 , Size.Z/2)
+	PartE.CFrame = Position*CFrame.new(Size.X/2 , -Size.Y/2 , -Size.Z/2)
+	PartF.CFrame = Position*CFrame.new(Size.X/2 , Size.Y/2 , -Size.Z/2)
+	PartG.CFrame = Position*CFrame.new(Size/2)
+	PartH.CFrame = Position*CFrame.new(-Size.X/2 , -Size.Y/2 , Size.Z/2)	
+end)
+```
