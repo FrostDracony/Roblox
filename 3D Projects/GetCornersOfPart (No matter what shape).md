@@ -1,4 +1,4 @@
-# Get the Corners of a BasePart
+# Get the Corners of a BasePart (No matter what shape)
 
 ## Table of Contents
 
