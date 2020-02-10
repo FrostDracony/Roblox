@@ -9,6 +9,6 @@ In this tutorial I will deal with getting the corners of a sphere shaped part. T
 
 In this sketch you can see how you can get all the corners of a sphere. I will use vectors, then only see the Picture and with a bit math we have our Idea!
 
-picture
+![IMG_1508](imgs/GetCornersOfASphere/IMG_1508.jpeg)
 
 Ok
