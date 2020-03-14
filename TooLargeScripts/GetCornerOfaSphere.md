@@ -1,3 +1,4 @@
+```Lua
 local Parent = script.Parent
 local Position = Parent.CFrame
 local Size = Parent.Size
@@ -308,3 +309,4 @@ for index, vert in pairs(Vertices) do
 	Vertex.Name = "Vertex"..index
 	Vertex.Position = Position * (vert * Size)
 end
+```
