@@ -126,9 +126,17 @@ local Vertices = {
 
 Nevertheless we have to adapt the position with the size, we have to remember that the position only works for a 1x1x1 cylinder, but this is not always the case:
 ```lua
-Vertex.Position = Position * (vert * Size)
+for index, vert in pairs(Vertices) do
+	--Creating the parts to visualize us vertices
+	local Vertex = Instance.new("Part", workspace.Vertex)
+	Vertex.BrickColor = BrickColor.Red()
+	Vertex.Size = Vector3.new(0.01, 0.01, 0.01)
+	Vertex.CanCollide = false
+	Vertex.Anchored = true
+	Vertex.Name = "Vertex"..index
+	Vertex.Position = Position * (vert * Size)
+end
 ```
-
 But then another problem arises:
 
 Picture
