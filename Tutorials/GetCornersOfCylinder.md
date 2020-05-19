@@ -1,16 +1,16 @@
-Hi, willkommen in dieses neunem Tutorialteil! In diesen Teil werden wir über Scheitelpunkte eines Zylinder reden, wie man sie bekommen kann und viel mehr. 
+Hi, welcome to this new tutorial section! In this part we will talk about vertices of a cylinder, how to get them and much more. 
 
-Den System ist praktisch den selben wie bei einem Ball (sieh anderen Tutorial), man geht auf Blender (oder anderen Third Party Modelling Program), nimmt nur den positives Quadrant (also Scheitelpunkte) und um die andere zu bekommen spiegle ich die die ich schon habe. so leicht ist es.
+The system is practically the same as for a ball (see other tutorial. Edit: No, it's a little different), you go to Blender (or other third party modeling program), take only the positive quadrant (vertices) and to get the other one I mirror the one I already have.
 
-Man nimmt zu erst ein 1x1x1 Zylinder (1x1x1 ist auch die Maße mit dem ich die Scheitelpunkte darstelle):
+First you take a 1x1x1 cylinder (1x1x1 is also the size I use to represent the vertices):
 
-Bild
+Picture
 
-Dann wird es in Blender exportiert (Position natürlich 0x0x0), das ermöglicht uns die Positionen der Scheitelpunkte zu erhalten:
+Then it is exported to Blender (position of course 0x0x0), which allows us to get the positions of the vertices:
 
-Bild
+Picture
 
-Wie Schon gesagt, ich nehme mir ein Quadrant, dann spiegle ich das ganzen um alle meine Scheitelpunkte zu bekommen (ein Robloxzylinder hat 114 Scheitelpunkte). Dies ist dann was ich jetzt bekam (als Tabelle):
+As I said before, I take a quadrant, then I mirror the whole thing to get all my vertices (a Roblox cylinder has 114 vertices). This is what I got now (as a table. Edit: Pls see the final table, i made some misstakes here!):
 
 ```lua
 local Vertices = {
@@ -25,9 +25,9 @@ local Vertices = {
 }
 ```
 
-Resultat:
+Result:
 
-Bild
+Picture
 
 Code:
 ```lua
@@ -46,7 +46,7 @@ for index, vert in pairs(Vertices) do
 	Vertex.Position = Position * (vert * Size)
 end
 ```
-Jetzt überspringe ich den ganzem Teil mit der Spieglung, zeige euch trotzdem den Code:
+Now I'll skip the whole part with the mirroring, show you the code anyway:
 ```lua
 for _,vert in pairs(Vertices) do
     local Mirrored = -vert
@@ -68,7 +68,7 @@ for _,vert in pairs(Vertices) do
 end
 ```
 
-Das ist jetzt die ganze Tabelle:
+This is now the whole table:
 ```lua
 local Vertices = {
     Vector3.new(1, 1, 0),
@@ -124,15 +124,15 @@ local Vertices = {
 }
 ```
 
-Trotzdem müssen wir die Position mit der Größe adaptieren, wir müssen uns erinnern dass die Position nur für ein 1x1x1 Zylinder funktioniert, das ist ja aber nicht immer den Fall:
+Nevertheless we have to adapt the position with the size, we have to remember that the position only works for a 1x1x1 cylinder, but this is not always the case:
 ```lua
 ```
 
-Doch dann entsteht ein anderes Problem:
+But then another problem arises:
 
-BIld
+Picture
 
-Es sieht komisch aus, aus den ganz einfachen Grund dass Roblox für den Radius unserem Zylinder immer die kleinste **Zahl** zwischen die "Size.Z und Size.Y" verwendet. Das zwingt uns zu einem neuen System zu verwenden (aber falls Roblox es nicht gemacht hätte würde unserem Code doch funktionieren). Jetzt aber, müsste ich die ganze Methoden erklären würde dies zu lange dauern, deswegen habe ich einfach meinem Code kommentiert damit ihr es besser versteht, viel Spass beim lesen :-)
+It looks strange, for the simple reason that Roblox always uses the smallest **number** between the "Size.Z and Size.Y" for the radius of our cylinder. This forces us to use a new system (but if Roblox didn't do it our code would work after all). But now, if I had to explain all the methods it would take too long, so I just commented my code so you can understand it better, have fun reading it :-)
 ```lua
 local Parent = script.Parent
 local Position = Parent.Position
