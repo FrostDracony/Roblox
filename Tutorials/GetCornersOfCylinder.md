@@ -126,6 +126,7 @@ local Vertices = {
 
 Nevertheless we have to adapt the position with the size, we have to remember that the position only works for a 1x1x1 cylinder, but this is not always the case:
 ```lua
+Vertex.Position = Position * (vert * Size)
 ```
 
 But then another problem arises:
