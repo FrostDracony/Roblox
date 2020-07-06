@@ -1,3 +1,5 @@
+# Get the Corners of a Cylinder
+
 Hi, welcome to this new tutorial section! In this part we will talk about vertices of a cylinder, how to get them and much more. 
 
 The system is practically the same as for a ball (see other tutorial), you go to Blender (or other third party modeling program), take only the positive quadrant (vertices) and to get the other one I mirror the one I already have.
