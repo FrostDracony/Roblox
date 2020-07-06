@@ -6,11 +6,11 @@ The system is practically the same as for a ball (see other tutorial), you go to
 
 First you take a 2 x 2 x 2 cylinder (0.05 x 0.05 x 0.05 is the common, but not always, size I use for the vertices):
 
-![Part_In_Studio](imgs\GetCornersOfCylinder\Part_In_Studio.png)
+![Part_In_Studio](imgs/GetCornersOfCylinder/Part_In_Studio.png)
 
 Then it is exported to Blender (position of course 0x0x0), which allows us to get the positions of the vertices:
 
-![Part_In_Blender](imgs\GetCornersOfCylinder\Part_In_Blender.png)
+![Part_In_Blender](imgs/GetCornersOfCylinder/Part_In_Blender.png)
 
 As I said before, I take a quadrant, then I mirror the whole thing to get all my vertices (a Roblox cylinder has 114 vertices). This is what I got now (as a table):
 
@@ -29,7 +29,7 @@ local Vertices = {
 
 Result:
 
-![ExampleVertices](imgs\GetCornersOfCylinder\ExampleVertices.png)
+![ExampleVertices](imgs/GetCornersOfCylinder/ExampleVertices.png)
 
 Code:
 ```lua
@@ -132,7 +132,7 @@ Vertex.Position = Position * (vert * Size)
 ```
 
 But then another problem arises:
-![Cylinder_Problem](imgs\GetCornersOfCylinder\Cylinder_Problem1.png) 
+![Cylinder_Problem](imgs/GetCornersOfCylinder/Cylinder_Problem1.png) 
 Picture
 
 It looks strange, for the simple reason that Roblox always uses the smallest **number** between the "Size.Z and Size.Y" for the radius of our cylinder, so it keeps a costant ratio of 1 (If Z is size 5, and Y is size 3, then the Z size automatically becomes the smallest size, so 3, so the ratio between both sizes is 1, so when you make Y size / Z size it automatically becomes 1). This forces us to use a new system (but if Roblox hadn't done it, our code would still work). But now, if I had to explain all the methods it would take too long, so I just commented my code so you understand it better, have fun reading it :-)
@@ -174,13 +174,13 @@ end
 
 So, I hope you enjoyed it. So in the end:
 
-![End_Cylinder](imgs\GetCornersOfCylinder\End_Cylinder.png)
+![End_Cylinder](imgs/GetCornersOfCylinder/End_Cylinder.png)
 
-![End_Cylinder1](imgs\GetCornersOfCylinder\End_Cylinder1.png)
+![End_Cylinder1](imgs/GetCornersOfCylinder/End_Cylinder1.png)
 
-![End_Cylinder2](imgs\GetCornersOfCylinder\End_Cylinder2.png)
+![End_Cylinder2](imgs/GetCornersOfCylinder/End_Cylinder2.png)
 
-![End_Cylinder5](imgs\GetCornersOfCylinder\End_Cylinder5.png)
+![End_Cylinder5](imgs/GetCornersOfCylinder/End_Cylinder5.png)
 
 Full Script:
 
