@@ -5,11 +5,11 @@ I would first say to you: First think what are the difference between a part and
 Then, after this: Pls go see my tutorial on how to get the vertices of a normal Part, then this section here is not so hard to understand. To get the vertices of a wedge:
 Just delete 2 vertices and you got it.
 
-![WedgePart](imgs\GetCornersOfWedgeAndCornerWedge\WedgePart.png)
-
-![CornerWedgePart](imgs\GetCornersOfWedgeAndCornerWedge\CornerWedgePart.png)
+![WedgePart](imgs/GetCornersOfWedgeAndCornerWedge/WedgePart.png)
 
 And for a corner-wedge part delete 3 vertices.
+
+![CornerWedgePart](imgs/GetCornersOfWedgeAndCornerWedge/CornerWedgePart.png)
 
 Srly, it just easy, but if you not understandet this:
 If a part has 8 vertices and a wedge part 6 vertices, just find the vertices that the wedge part not own and delete these. Same thing with the corner-wedge part.
