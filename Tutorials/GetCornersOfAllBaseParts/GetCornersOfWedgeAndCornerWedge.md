@@ -1,3 +1,4 @@
+# GetCornersOfWedgeAndCornerWedge
 Hi, welcome to this new tutorial section! In this part we will talk about vertices of a wedge and corner-wedge, how to get them and much more. 
 
 I would first say to you: First think what are the difference between a part and a wedge part or a corner-wedge part.
