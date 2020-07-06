@@ -4,11 +4,11 @@ The system is practically the same as for a ball (see other tutorial), you go to
 
 First you take a 2 x 2 x 2 cylinder (0.05 x 0.05 x 0.05 is the common, but not always, size I use for the vertices):
 
-[Part_In_Studio](imgs\GetCornersOfCylinder\Part_In_Studio.png)
+![Part_In_Studio](imgs\GetCornersOfCylinder\Part_In_Studio.png)
 
 Then it is exported to Blender (position of course 0x0x0), which allows us to get the positions of the vertices:
 
-[Part_In_Blender](imgs\GetCornersOfCylinder\Part_In_Blender.png)
+![Part_In_Blender](imgs\GetCornersOfCylinder\Part_In_Blender.png)
 
 As I said before, I take a quadrant, then I mirror the whole thing to get all my vertices (a Roblox cylinder has 114 vertices). This is what I got now (as a table):
 
@@ -27,7 +27,7 @@ local Vertices = {
 
 Result:
 
-[ExampleVertices](imgs\GetCornersOfCylinder\ExampleVertices.png)
+![ExampleVertices](imgs\GetCornersOfCylinder\ExampleVertices.png)
 
 Code:
 ```lua
