@@ -24,7 +24,7 @@ When in Blender, move the camera with the middle button of the mouse. Attention:
 
 Now, we go into studio then we have to make a table (it's recommended by me, otherwise it looks like a catastrophe):
 
-```
+```lua
 local Vertices = {
 	Vector3.new(0.5, -0.000107, -0.000009),
 	Vector3.new(0.474, -0.000107, 0.15811),
