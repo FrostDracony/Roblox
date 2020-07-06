@@ -1,3 +1,8 @@
+```lua
+local Parent = script.Parent
+local Position = Parent.CFrame
+local Size = Parent.Size
+local Radius = Parent.Size/2
 local Vertices = {
 	Vector3.new(0.5, -0.000107, -0.000009),
 	Vector3.new(0.474, -0.000107, 0.15811),
@@ -292,3 +297,36 @@ local Vertices = {
     Vector3.new(0.266999989748, 0.40088999271393, -0.13348999619484),
     Vector3.new(0.266999989748, 0.13348999619484, -0.40088999271393),
 }
+for index, vert in ipairs(Vertices) do
+	local Vertex = Instance.new("Part")
+	Vertex.Parent = workspace.SphereVertices
+	Vertex.BrickColor = BrickColor.Red()
+	Vertex.Size = Vector3.new(0.05, 0.05, 0.05)
+	Vertex.CanCollide = false
+	Vertex.Anchored = true
+	Vertex.Name = "Vertex"..index
+	Vertex.Position = Position * (vert * Size)
+end
+
+local function onPositionUpdate()
+	local NewPosition = Parent.CFrame
+	local Offset = Position:ToObjectSpace(NewPosition)
+	for i,VertexPart in ipairs(workspace.SphereVertices:GetChildren()) do
+		local vertex = VertexPart.CFrame
+		VertexPart.Position = (vertex*Offset).Position
+		Position = NewPosition
+	end
+end
+
+local function onSizeUpdate()
+	local NewSize = Parent.Size
+	for i,VertexPart in ipairs(workspace.SphereVertices:GetChildren()) do
+		local vertex = VertexPart.Position
+		Size = NewSize
+		VertexPart.Position = Position * (Vertices[i] * Size)
+	end
+end
+
+Parent:GetPropertyChangedSignal("Position"):Connect(onPositionUpdate)
+Parent:GetPropertyChangedSignal("Size"):Connect(onSizeUpdate)
+```

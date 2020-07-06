@@ -1,10 +1,4 @@
-```Lua
-local Parent = script.Parent
-local Position = Parent.CFrame
-local Size = Parent.Size
-local Radius = Parent.Size/2
-local RunService = game:GetService("RunService")
-
+```lua
 local Vertices = {
 	Vector3.new(0.5, -0.000107, -0.000009),
 	Vector3.new(0.474, -0.000107, 0.15811),
@@ -299,14 +293,4 @@ local Vertices = {
     Vector3.new(0.266999989748, 0.40088999271393, -0.13348999619484),
     Vector3.new(0.266999989748, 0.13348999619484, -0.40088999271393),
 }
-
-for index, vert in pairs(Vertices) do
-	local Vertex = Instance.new("Part", workspace.Vertex)
-	Vertex.BrickColor = BrickColor.Red()
-	Vertex.Size = Vector3.new(0.01, 0.01, 0.01)
-	Vertex.CanCollide = false
-	Vertex.Anchored = true
-	Vertex.Name = "Vertex"..index
-	Vertex.Position = Position * (vert * Size)
-end
 ```
