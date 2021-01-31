@@ -759,7 +759,7 @@ local function CreateFace(model, token):Face
 end
 
 
-function Loader.loadObj(Settings)
+function Loader.loadObj(data, Settings)
 	Settings = Settings or {
 		scale = 1;
 	};
@@ -838,7 +838,7 @@ function Loader.loadObj(Settings)
 		end,
 	};
 	---------------------------------------------------------------------------
-	local data = require(script.OBJModel) --The source-code, in other words the OBJ Model
+	--The "data" variable is the source-code, in other words the OBJ Model
 	local StartTime:number = tick() --Start time
 	local model = CreateModel(); --The model that will be returned: Here, all vertices and faces will be stored
 	local Table = string.split(data, "\n") --A Table containing all lines of the source-code
