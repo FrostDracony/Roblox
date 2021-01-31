@@ -1,3 +1,4 @@
+--Just some Script that I made to train my abilities, please don't use it. Thanks
 --Note: When I write "Instance", but it's obvious that's a table, I mean a table that has on the index 1 an instance, but nothing on the index 2. So, only instance.
 --[[ License (If you don't want to read,simply collapse this little. Press arrow at the line 2). To know what this means, go on this site. It's safe, no viruses, simply trust me: https://choosealicense.com/licenses/agpl-3.0/#
 
